@@ -1,1 +1,53 @@
+Overview of the Software System:
+
+The Movie Theater Ticketing System is a web-based application that allows users to browse, select, or purchase tickets for movies at theaters across various locations. The system has an interface that is easy and intuitive to use for both customers as well as administrators. The system allows users to book movie tickets, manage their rewards points, leave feedback for their theaters and also for administrators to manage movie schedules, theaters, and ticket availability. 
+
+Tasks for the Software System:
+
+- Design the UML Diagram for the software system
+  - Task completed collaboratively by group members: Calvin and Minh
+
+- Write the description of the UML Diagram
+  - Task completed collaboratively by group members: Calvin and Minh
+
+- Group Review of the UML Diagram
+  - Task completed by the group, including members: Justin, Alex, Calvin, and Minh
+
+- Design the SWA Diagram for the software system
+  - Task completed collaboratively by group members: Justin and Alex
+
+- Write the description of the SWA Diagram
+  - Task completed collaboratively by group members: Justin and Alex
+
+- Group Review of the SWA Diagram
+  - Task completed by the group including members: Justin, Alex, Calvin, and Minh
+
+- Write the information, description development plan, and timeline of the system
+  - Task completed by the group, including members: Justin, Alex, Calvin, and Minh
+
+- Discuss and implement finishing touches, ensuring software system meets requirements
+  - Task completed by group, including members: Justin, Alex, Calvin, and Minh
+
+Timeline
+This part of the SRS will be completed over the course of a week, starting from Thursday, October 3rd, and finishing on Thursday, October 10th. 
+
+- First Day
+  - Start to design both the UML and SWA diagrams
+  - Work together to pinpoint a clear focus on the design
+
+- Third Day
+  - Finish the designs for both the UML and SWA diagrams
+  - Work with each half of the group to write descriptions for each diagram
+
+- Fourth Day
+  - Complete the descriptions for both the UML and SWA diagrams
+  - Review and discuss each part of the software system, including each diagram and each description
+
+- Fifth Day
+  - Write the information, description development plan, and timeline of the system
+
+- Seventh Day
+  - Discuss and implement finishing touches, ensuring software system meets requirements
+  - Upload everything to github
+  - Submit the Software Design Specification
 
