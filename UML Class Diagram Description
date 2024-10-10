@@ -1,8 +1,105 @@
 Classes and their description
-  Movie Class:
-    consists of String movieName etc etc
+The Movie class consists of 7 attributes that range from Strings, ints, or bools.
++ movieName: String
+  - This is the title of the movie.
+  - Example: “Avengers: Endgame”, “Whiplash”
++ date: int
+  -This shows the date of the movie in the “MMDDYYYY” format
++ time: int
+  - This is the time that the movie will play and will be shown in a 24-hour format
++ screen: int
+  - The screen number where the movie is being shown
++ rating: String
+  - This is the movie’s age rating, for example, “PG”, “PG-13”, or “R”
++ location: String
+  - The theater location where the movie is playing
++ seats: Map<bool>
+  - A map of seat availability, will be true if the seat is available, but will be false if the seat is taken.
+  - Example: {1: True, 2: False, 3: True} - Seat 1 is available, seat 2 is taken, and seat 3 is available.
+The Movie class contains 4 methods (operations)
+- setName(String): void-
+  - This method sets the name of the movie
+  - Has parameter - name which is a string containing the new name of the movie
+  - This method allows the admin to set a new name if the movie needs to be updated or changed.
+  - Returns nothing (void)
+- getName(): String
+  - This method returns the name of the movie
+  - When a user selects a movie, this method is called to retrieve the movie’s name to display on the UI.
+  - Returns a string containing the name of the movie
++ getFreeSeats(): Map<bool>
+  - This method retrieves the current seating map and returns the seats available
+  - This method displays to a user the available seats
+  - Returns a map where each seat index is associated with availability
++ isSeatFree(index: int): bool
+  - This method checks if a specific seat is free or available
+  - contains parameter index - an integer representing the seat index or number
 
-    movie class depends on blank
+The TheaterLocation class handles the management of movies and their related operations for specific theater locations and has 4 attributes.
++ movies: Movie[] 
+  - A collection of Movie objects representing all the movies currently available at this theater location
++ theaterName: String
+  - The name of the theater
+  - Example: “AMC Mission Valley”
++ address: String
+  - The physical address of the theater location
++ capacity: int
+  - The total seating capacity of the theater. This is the total number of seats across all screens in the theater
+The theaterLocation class contains 3 operations that all relate to updating movies at specific locations
++ updateMovie(movie: Movie): void
+  - This method updates an existing movie’s details at the theater
+  - Contains the parameter movie: movie object contains details like showtime, screen, or rating
+  - This method is used when a movie’s information changes and needs to be updated in the system
+  - Returns: Nothing (void)
++ addMovie(movie: Movie): void
+  - Adds a new movie to the theater’s list of available movies
+  - has parameter movie which is a Movie object representing the new movie added to the theater’s schedule
+  - This method is called when a new movie is added to the theater’s schedule
+  - Returns Nothing(void)
++ listMovies(): List<Movie>
+  - Returns a list of all movies currently playing at a specific theater
+  - The method is called when a user/admin wants to see all movies available at this specific theater location
+  - Returns a list of Movie objects playing at the theater
+
+The Ticket class has 3 attributes all relating to purchased/available tickets for movies
++ ticketID: int
+  - An identifier for the ticket. This ID is used to differentiate between tickets
++ seat: (int, int)
+  - Represents the seat location in the format (row, seatNumber) in the theater.
++ price: float
+  - This is the price of the ticket.
+The Ticket class also has 3 methods 
+- buyTicket(): void
+  - Executes the purchase of a ticket from a user, once the ticket is bought, the seat associated with it is unavailable
+  - This method is used when the user finalizes their purchase and confirms seat selection
+  - Returns: Nothing(void)
+- cancelTicket(): void
+  - Cancel the ticket. The ticket becomes invalid and the associated seat is available again
+  - The method is called if a user requests a ticket voucher and cancels their ticket before showtime
+  - Returns Nothing(void)
++ printTicket(): void
+  - Prints the ticket details including movie name, seat number, theater location, and other ticket info
+  - This method can be used when a user wants to generate a hard copy of their ticket or print a receipt
+  - Returns: Nothing(void)
+
+The MakePayment class deals with the payment process, associating tickets with transactions, confirming purchases, and updating seat availability. The class has 4 attributes
+- transactionID: int
+  - An identifier for the payment transaction
+- myTicket: Ticket
+  - A reference to the Ticket object that is being paid for.
+- paymentMethod: String
+  - method used to process the payment (credit card, debit card, or PayPal)
+- amount: float
+  - The total amount being paid for the ticket. Ticket price with added taxes or fees
+The MakePayment class has two operations
+- confirmPurchase(ticket: Ticket): int
+  - Confirms payment for a specific ticket, processes the payment, updates transaction and returns unique transaction ID
+  - contains parameter ticket: a Ticket object representing the ticket being purchased
+  - Returns an int representing the transactionID
+- updateSeats(ticket: Ticket): void
+  - Updates seat availability for the movie once the ticket is purchased.
+  - has parameter ticket: a Ticket object representing the seat that’s been purchased
+  - After payment is confirmed, method is used to mark seat as taken in the chart
+  - Returns Nothing(void)
 
 The class AccountInfo contains 3 String attributes:
 - Email address (uses letters, numbers, symbols)
