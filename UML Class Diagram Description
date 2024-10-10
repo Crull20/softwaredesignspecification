@@ -4,6 +4,76 @@ Classes and their description
 
     movie class depends on blank
 
+The class AccountInfo contains 3 String attributes:
+- Email address (uses letters, numbers, symbols)
+- Password (uses letters, numbers, symbols)
+- Phone number (uses numbers and symbols such as (xxx)-xxx-xxxx)
 
-  
+AccountInfo is a generalization of AdminInfo and UserInfo.
+All AdminInfo and UserInfo will have the attributes of AccountInfo as well as the individual attributes and operations of each class.
+	
+AdminInfo class has an Admin ID int attributes containing 6 integers (xxxxxx)
+The class also has 3 operations for managing movies in the theater:
+- addMovie(Movie, Theater): void
+  + This function takes a Movie object as a parameter to be added to the Theater parameter
+  + This function returns nothing/void
+- deleteMovie(Movie, Theater): void
+  + This function takes a Movie object as a parameter to be deleted from the Theater parameter
+  + This function returns nothing/void
+- updateTime(Movie, Theater, int): void
+  + This function takes a Movie object as a parameter to have its showtime updated  
+  + This function takes a Theater parameter for Movies at a specific location
+  + This function takes an int parameter as new showtime
+  + This function returns nothing/void
+
+AdminInfo uses the Movie and Theater class/object
+
+UserInfo class has 3 attributes:
+- loyaltyPoints: int
+  + This loyalty point system will be represented by numbers, higher points means better rewards
+- rewardAvailable: String
+  + Display what rewards are available to claim as a String
+- rewardStatus: bool
+  + Rewards that are claimed are marked as True and will show up during payments
+  + Rewards that are not claimed are marked as False and will not show up
+
+
+The UserInfo class has 5 operations that a user can do:
+- viewMovies(): void
+  + This method allows user to view all available Movies from all Theaters
+  + This method returns nothing/void
+- pickMovies(Movie): void
+  + This method takes a Movie object as a parameter 
+  + Selected movie will display all attributes of the Movie class for that specific movie
+  + This method returns nothing/void
+- requestRefund(): void
+  + This method allows users to set their tickets invalid and get free ticket coupons that expire 1 year after the refund is executed
+  + This method returns nothing/void as well as no change to the availability of seats
+- updateLoyalty(int, int): int
+  + This method takes 2 int as parameter, the first int being the current point, the second int being the points being added
+  + This method will add the 2 parameters and return the new loyalty point as an int
+- viewFeedback(): void
+  + This method will show all user feedback for movies and theaters, in descending order of the feedbackID (meaning the most recent will show up first and the first ever feedback will show up last)
+  + This method returns nothing/void
+
+
+UserFeedback is part of UserInfo (Aggregation)
+UserFeedback is associated with the Movie class and Theater class
+
+For each feedback, UserFeedback has 4 attributes:
+- feedbackID: int
+  + This will help separating and ordering the feedback, the IDs will start with 000001 and increase by one for each feedback.
+- content: String
+  + This is the main part of the feedback, written as a String
+- rating: int
+  + This will be a number from 0 to 10, 10 represents the highest rating for the best movies or theater
+- feedbackDate: int
+  + Record the day of the feedback in MMDDYYYY format with integers
+ 
+UserFeedback has 2 operations:
+- editFeedback(String): void
+  + This method allows a user to edit the content of an existing feedback
+- getRating(): int
+  + This method returns an integer representing the rating given in the feedback
+
   
