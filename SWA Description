@@ -4,3 +4,44 @@ It handles all the data-related operations, such as querying movie information, 
   -This database passes a list of movies currently available, including genres, ratings, and descriptions.
   -This database sends detailed showtimes for selected movie and associated theater locations. This includes the date, time, and address.
 
+Database - Theaters: This database contains structured information about various theaters. It presents the layout which involves the seating arrangements within each theater, including rows, columns, and special sections (e.g., ADA-compliant areas), the current available status for each seat, and seats that are designed for accessibility needs.
+  -This database passes seating information which enables customers to see which seats  are available for selection.
+
+Database - User Accounts: This database stores and manages user-related information. Including usernames, passwords, payment history, rewards, and contact information. It ensures that each page that needs user data has the latest and most accurate information.
+  -This database provides authentication data (username, password) for user login verification.
+  -This database supplies saved card information and rewards data for quick and discounted transactions.
+  -This database receives user information from Login Page in order for user account to be accessed and used for purchasing ticket.
+  -This database receives a refund process evaluation to supply user account with a free ticket voucher.
+
+Movie Selection Page: This page allows customers to browse the movies currently available for viewing. Users can view detailed descriptions, trailers, and select a movie to proceed with booking.
+  -This page directs the user to Time & Theater Page with selected movie’s title as input, so the system can retrieve the appropriate showtimes and theater locations.
+
+Time & Theater Page: This page displays the showtimes and theater locations for the selected movie. It allows users to pick a preferred time slot and location.
+  -This page passes selected showing details (movie, time, and theater), enabling the system to load a seating map for the specific showing.
+  -This page can pass showing details and basic seating information directly to Payment Page if the user desires to proceed directly to payment (e.g. no seat selection required).
+
+Select Seat Page: This page shows a visual representation of the seating arrangement for specific theater and showtime. Users can select preferred seats for the specific movie and showtime.
+  -This page sends the selected seat numbers and associated movie/showtime details to Payment Page, allowing user to finalize payment.
+  -This page can also redirect user to Login Page if the user is not authenticated.
+
+Payment Page: This page handles the payment processing for the selected seats and showing. It securely processes user payment details, confirms seat reservations, and communicates with external payment gateways.
+  -This page confirms payment with purchase status that is passed to bank information.
+  -This page passes seat information and purchase confirmation details for order completion.
+  -This page receives card information and rewards from User Accounts database to access exclusive benefits (e.g., discounts, free vouchers) through possession of an existing account on the system.
+
+Confirmation Page: This page displays the finalized booking details, such as seat numbers, theater information, and payment status. It is the concluding step before tickets are issued and serves as a reference for ticket delivery.
+  -This page passes ticket and booking information for ticket delivery.
+
+Ticket Delivery: This page manages the distribution of tickets via email or other methods based on the user’s preference.
+  -This page passes information to update purchase history and rewards based on successful ticket delivery.
+  -This page points back to Confirmation Page in case of delivery failure or need for review.
+
+Login Page: This page handles user authentication by verifying login credentials. It directs users to create a new account if they are not registered and facilitates smooth navigation to other pages based on authentication status.
+  -This page passes authentication status and user ID to proceed with payment.
+  -This page also receives information from User Accounts database to enable user to log into an existing account in the system.
+
+Refund: This system handles any refunds to be made on already processed transactions. Once refunded, the selected seat will not be available for purchase anymore.
+  -This page passes information to enable user to receive a free coupon that can be used for purchasing a movie ticket that will last in the user’s account for 1 year.
+
+Bank Info: This component manages sensitive cardholder information, facilitating payment transactions. It stores card details temporarily or permanently and communicates with Payment Page for processing.
+  -This component passes cardholder and payment details for transaction completion. 
