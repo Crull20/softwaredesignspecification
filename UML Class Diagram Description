@@ -1,4 +1,5 @@
 Classes and their description
+Methods and atrributes with "-" means private and "+" means public
 The Movie class consists of 7 attributes that range from Strings, ints, or bools.
 - movieName: String
   + This is the title of the movie.
