@@ -1,1 +1,6 @@
+Elements and their description
+Database - List of Movies: This database is the central repository for storing the list of movies, showtimes, and theater locations. 
+It handles all the data-related operations, such as querying movie information, recording seat reservations, storing payment confirmations, and updating available showtimes in real-time:
+  -This database passes a list of movies currently available, including genres, ratings, and descriptions.
+  -This database sends detailed showtimes for selected movie and associated theater locations. This includes the date, time, and address.
 
