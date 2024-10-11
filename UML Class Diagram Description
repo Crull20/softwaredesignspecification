@@ -17,7 +17,7 @@ The Movie class consists of 7 attributes that range from Strings, ints, or bools
   + A map of seat availability, will be true if the seat is available, but will be false if the seat is taken.
   + Example: {1: True, 2: False, 3: True} - Seat 1 is available, seat 2 is taken, and seat 3 is available.
 The Movie class contains 4 methods (operations)
-- setName(String): void-
+- setName(String): void
   + This method sets the name of the movie
   + Has parameter - name which is a string containing the new name of the movie
   + This method allows the admin to set a new name if the movie needs to be updated or changed.
