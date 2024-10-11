@@ -137,7 +137,7 @@ UserInfo class has 3 attributes:
   + Rewards that are not claimed are marked as False and will not show up
 
 
-The UserInfo class has 5 operations that a user can do:
+The UserInfo class has 6 operations that a user can do:
 - viewMovies(): void
   + This method allows user to view all available Movies from all Theaters
   + This method returns nothing/void
@@ -151,6 +151,9 @@ The UserInfo class has 5 operations that a user can do:
 - updateLoyalty(int, int): int
   + This method takes 2 int as parameter, the first int being the current point, the second int being the points being added
   + This method will add the 2 parameters and return the new loyalty point as an int
+- viewPurchaseHistory(): List<Ticket>
+  + This method returns user's purchase history in form of a list of Ticket objects allowing user to see tickets purchased in the past
+  + Returns a list of Ticket objects representing user's previous purchases
 - viewFeedback(): void
   + This method will show all user feedback for movies and theaters, in descending order of the feedbackID (meaning the most recent will show up first and the first ever feedback will show up last)
   + This method returns nothing/void
